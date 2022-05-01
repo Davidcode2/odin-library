@@ -1,0 +1,75 @@
+* {
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+}
+
+html {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.body-wrapper {
+	margin: 20px 12.5vw;
+}
+
+.book-cards-wrapper {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 25px;
+}
+
+.book-card {
+	padding: 20px;
+	font-size: 1.1rem;
+	box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  10px 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-button {
+	border: none;
+	border-radius: 15px;
+	margin: 10px 0;
+	padding: 5px 15px;
+	background-color: lightsteelblue;
+}
+
+.card-button:hover {
+	background-color: steelblue;
+}
+
+.card-button:active {
+	background-color: gainsboro;
+}
+
+form {
+	position: fixed;
+	top: 200px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: none;
+	flex-flow: column wrap;
+	align-items: start;
+	background-color: olivedrab;
+	border-radius: 20px;
+	padding: 75px;
+	box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.add-book-button {
+	background-color: rosybrown;
+	margin: 0px;
+}
+
+.header-one-wrapper {
+	display: flex;
+	margin-bottom: 6px;
+}
+
+.header-one-wrapper > h2 {
+	margin-right: auto;
+}

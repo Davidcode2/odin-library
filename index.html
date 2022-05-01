@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js" defer></script>
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="body-wrapper">
+		<header>
+			<h1>Library</h1>
+			<div class="header-one-wrapper">
+				<h2>Books</h2>
+				<button class="card-button add-book-button">Add Book</button>
+			</div>
+		</header>
+		<main>
+			<form action="">
+				<label for="title-value">title</label>
+				<input id="title-value" type="text" name="title" placeholder="Lord of the flies">
+				<label for="author">author</label>
+				<input id="author" name="author" type="text">
+				<label for="releaseDate">release date</label>
+				<input id="releaseDate" name="releaseDate" type="text">
+				<label for="pages">pages</label>
+				<input id="pages" name="pages" type="text">
+				<label for="read-checkbox">read</label>
+				<input type="checkbox" name="read" id="read-checkbox">
+				<input type="hidden" name="read" value"wasRead">
+				<button type="button">Submit</button>
+			</form>
+			<div class="book-shelf">
+				<div class="book-cards-wrapper"></div>
+			</div>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>
