@@ -20,9 +20,10 @@
 			</div>
 		</header>
 		<main>
-			<form action="">
+			<form novalidate action="">
 				<label for="title-value">title</label>
-				<input id="title-value" type="text" name="title" placeholder="Lord of the flies">
+				<input id="title-value" type="text" name="title" placeholder="Lord of the flies" required>
+        <span class="error"></span>
 				<label for="author">author</label>
 				<input id="author" name="author" type="text">
 				<label for="releaseDate">release date</label>
@@ -32,7 +33,7 @@
 				<label for="read-checkbox">read</label>
 				<input type="checkbox" name="read" id="read-checkbox">
 				<input type="hidden" name="read" value"wasRead">
-				<button type="button">Submit</button>
+				<button type="submit">Submit</button>
 			</form>
 			<div class="book-shelf">
 				<div class="book-cards-wrapper"></div>

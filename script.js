@@ -18,11 +18,45 @@ function Book(title, author, releaseDate, numberOfPages, wasRead) {
 	}
 }
 
-let addBookForm = document.querySelector('form');
-let bookFormButton = document.querySelector("form > button");
-bookFormButton.addEventListener("click", () => {
-	addBookToLibrary();
-});
+function Program() {
+
+  let counter = 0;
+  let addBookForm;
+let addBookFormButton = document.querySelector('.add-book-button');
+
+
+this.main = function() {
+  let shown;
+  addBookForm = document.querySelector('form');
+  let bookFormButton = document.querySelector("form > button");
+  validateForm();
+  bookFormButton.addEventListener("click", () => {
+    addBookToLibrary();
+  });
+  addBookFormButton.addEventListener('click', () => {
+    shown = hideUnhide();
+  });
+}
+
+function validateForm() {
+  let titleInput = document.querySelector('#title-value');
+  let errorSpan = document.querySelector('.error');
+  titleInput.addEventListener('input', () => {
+    titleInput.checkValidity();
+    if (titleInput.validity.valid) {
+      titleInput.setCustomValidity("");
+      console.log("valid");
+      console.log(titleInput.value);
+      errorSpan.textContent = "";
+    } else {
+      showError(errorSpan);
+    }
+  });
+}
+
+function showError(span) {
+  span.textContent = "please enter a title";
+}
 
 function addBookToLibrary() {
 	let newBook = new Book(addBookForm.title.value, addBookForm.author.value, addBookForm.releaseDate.value, addBookForm.pages.value, addBookForm.read.value);
@@ -31,7 +65,6 @@ function addBookToLibrary() {
 	addBookCard(newBook);
 }
 
-let counter = 0;
 function addBookCard(book) {
 	// create book card
 	let book_card = document.createElement('div');
@@ -72,7 +105,6 @@ function readBook() {
 	? myLibrary[this.parentElement.dataset.id].wasRead = false
 	: myLibrary[this.parentElement.dataset.id].wasRead = true;
 	this.previousSibling.textContent = myLibrary[this.parentElement.dataset.id].info();
-
 }
 
 for (let i = 0; i < myLibrary.length; i++) {
@@ -84,16 +116,18 @@ function removeBook() {
 	this.parentElement.remove();
 }
 
-let addBookFormButton = document.querySelector('.add-book-button');
-addBookFormButton.addEventListener('click', () => {
-	hideUnhide();
-});
-
 function hideUnhide() {
-	addBookForm.style.display === "none"
-		? addBookForm.style.display = "flex"
-		: addBookForm.style.display = "none";
+	if (addBookForm.style.display == "none") {
+		addBookForm.style.display = "flex"
+  } else {
+		addBookForm.style.display = "none";
+  }
 	console.log(addBookForm.style.display);
+  return addBookForm.style.display;
 }
 
 console.log(book1.info());
+}
+
+let program = new Program();
+program.main();
